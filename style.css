@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  background: #0a0f1c;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 700px;
+  animation: slideUp 1.5s ease forwards;
+}
+
+.click-to-continue {
+  position: absolute;
+  top: 1rem;
+  text-align: center;
+  font-size: 10px;
+  width: 100%;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.main-content {
+  z-index: 1;
+  padding: 2rem;
+  opacity: 0;
+  animation: fadeInSlow 2s ease 1s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  overflow-y: auto;
+  height: 100%;
+  padding-top: 6rem;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+p {
+  font-size: 10px;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
